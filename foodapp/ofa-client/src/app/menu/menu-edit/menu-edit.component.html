@@ -1,0 +1,33 @@
+<form [formGroup]="menuFormGroup">
+  <mat-card class="common-mat-card common_table_card">
+    <mat-card-header class="common_table_header">
+      <mat-card-title>Menu Add</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field  class="ce_formfield" class="common-mat-input">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="menu_name"  class="common-mat-input">
+      </mat-form-field>
+
+      <mat-form-field class="ce_select" class="common-mat-input">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="menu_type" >
+          <mat-option *ngFor="let foodType of foodTypes" [value]="foodType.value">
+            {{foodType.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  
+      <mat-form-field  class="ce_formfield" class="common-mat-input">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Price" formControlName="unit_price" >
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click) = "saveMenu(menuFormGroup.value)">Save</button>
+      <button mat-button (click) = "cancel()">Cancel</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

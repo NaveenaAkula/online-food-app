@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1) !important;
+    display: block !important;
+    position: relative !important;
+    padding: 0rem !important;
+    border-radius: 2px !important;
+}
+
+.mat-card-header {
+    display: flex !important;
+    flex-direction: row !important;
+    background-color: rgb(95, 158, 160) !important;
+}
+
+.mat-card-header-text {
+    margin: 0 8px !important;
+    padding-top: 1rem !important;
+    color: white !important;
+}
+
+.mat-card-content {
+    padding-left: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.mat-card-title {
+    font-size: 1rem !important;
+}
+
+.common-mat-card{
+    width: 50%;
+    margin-left: 22%;
+    margin-top: 5%;
+}
+
+.common-mat-input{
+    width: 50%;
+    padding-right: 1rem;
+}
+
+.imageHeader > div > .mat-card-title {
+    font-size: 130% !important;
+    margin-left: 123% !important;
+    margin-bottom: 2% !important;
+}
+
+.menu_imageHeader > div > .mat-card-title {
+    font-size: 130% !important;
+    margin-left: 250% !important;
+    margin-bottom: 2% !important;
+}
+
+.imageHeader > div, .menu_imageHeader > div {
+    padding-top: 1% !important;
+}
+
+.mat-grid-tile {
+    width: calc((30% - 0.666667px) * 1 + 0px) !important;
+}
+
+
+
+.login_background:not(.SuperUser):not(.Customer) {
+    background-image: url('/static/front-end/assets/images/backgroundImage.jpg');
+    padding-top: 13.8rem !important;
+    padding-right: 15.8rem !important;
+    padding-bottom: 29.2rem !important;
+    padding-left: 15.8rem !important;
+}
+
+/* .login_background:not(.Login):not(.SignUp) {
+    background-image: url('/static/front-end/assets/images/backgroundRestaurant.jpg');
+    padding-top: 13.8rem !important;
+    padding-right: 15.8rem !important;
+    padding-bottom: 29.2rem !important;
+    padding-left: 15.8rem !important;
+} */
+
+.common_table_header {
+    padding: 0.2rem !important;
+}
+
+
+.common_table_card{
+    margin-top: 9rem !important;
+} 
+
+/* Laptop */
+/* .common_table_card{
+    margin-top: 6rem !important;
+} */

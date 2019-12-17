@@ -1,0 +1,48 @@
+<form [formGroup]="orderFormGroup">
+  <mat-card class="common_table_card">
+    <mat-card-header class="common_table_header">
+      <mat-card-title>Add Order</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field orderFormGroup class="ca_formfield">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field orderFormGroup class="ca_formfield">
+        <mat-label>Menu</mat-label>
+        <input matInput placeholder="Menu" formControlName="menu">
+      </mat-form-field>
+
+      <mat-form-field class="ce_select">
+        <mat-label>Order Type</mat-label>
+        <mat-select id = "u_addordertype" formControlName="orderType">
+          <mat-option *ngFor="let type of orderTypes" [value]="type.value">
+            {{type.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="ce_select">
+        <mat-label>Quantity</mat-label>
+        <mat-select id = "u_addquantity" formControlName="quantity">
+          <mat-option *ngFor="let type of quantities" [value]="type.value">
+            {{type.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field orderFormGroup class="ca_formfield">
+        <mat-label>Time Of Arriaval</mat-label>
+        <input id = "u_addordertimeofarival" type="time" matInput placeholder="Time Of Arriaval" formControlName="timeOfArriaval">
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" id="u_addordersubmit" (click) = "addOrder(orderFormGroup.value)">Submit</button>
+        <button mat-raised-button (click) = "cancel()" class="ad_cancel">Cancel</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+    
+  </mat-card>
+</form>

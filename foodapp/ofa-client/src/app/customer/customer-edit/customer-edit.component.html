@@ -1,0 +1,27 @@
+<form [formGroup]="customerFormGroup" *ngIf = "customerFormGroup?.controls != null">
+    <mat-card class="common-mat-card common_table_card">
+      <mat-card-header class="common_table_header">
+        <mat-card-title>Customer Edit</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field  class="ce_formfield" class="common-mat-input">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" formControlName="first_name" >
+        </mat-form-field>
+    
+        <mat-form-field  class="ce_formfield" class="common-mat-input">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" formControlName="last_name" >
+        </mat-form-field>
+    
+        <mat-form-field  class="ce_formfield" class="common-mat-input">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email" >
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click) = "saveCustomer()">Save</button>
+        <button mat-button (click) = "cancel()">Cancel</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

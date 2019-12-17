@@ -1,0 +1,76 @@
+<div class="login_background {{display}}">
+    <form class="login-form" [formGroup]="loginFormGroup" >
+        <mat-card class="login_mat-card login-card" *ngIf="display == 'Login'">
+            <mat-card-header class="login-header">
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-form-field class="login-full-width">
+                    <input matInput placeholder="UserName"  id="username" formControlName="userName">
+                    <mat-error *ngIf="userName?.errors?.required">
+                      UserName is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="login-full-width">
+                    <input matInput placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <mat-error *ngIf="password?.errors?.required">
+                      Password is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+                
+                <button mat-raised-button color="primary" type="submit" id="signin" (click)="Login()">SignIn</button>
+                <button mat-raised-button class= "signup" id="signup" (click)="openSignUp()">SignUp</button>
+                
+            </mat-card-content>
+        </mat-card>    
+    
+        <app-super-user-home *ngIf="display == 'SuperUser'" [customer] = 'customer' (goLogin) = 'openLogin()'></app-super-user-home>
+        <app-user-home *ngIf="display == 'Customer'" [customer] = 'customer' (goLogin) = 'openLogin()'></app-user-home>
+    </form>
+    
+    <form [formGroup]="signUpFormGroup" *ngIf="display == 'SignUp'">
+      <mat-card class="signup_matcard">
+        <mat-card-header>
+          <mat-card-title>SignUp</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field orderFormGroup class="sUp_formfield">
+            <mat-label>User Name</mat-label>
+            <input matInput placeholder="User Name" formControlName="userName">
+          </mat-form-field>
+      
+          <mat-form-field orderFormGroup class="sUp_formfield">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" formControlName="password">
+          </mat-form-field>
+    
+          <mat-form-field orderFormGroup class="sUp_formfield">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="First Name" formControlName="firstName">
+          </mat-form-field>
+    
+          <mat-form-field orderFormGroup class="sUp_formfield">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="Last Name" formControlName="lastName">
+          </mat-form-field>
+    
+          <mat-form-field orderFormGroup class="sUp_formfield">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+          
+          <mat-form-field orderFormGroup class="sUp_formfield">
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Phone" formControlName="phone">
+          </mat-form-field>
+    
+          <mat-card-actions class="signUp_buttons">
+            <button mat-raised-button color="primary" id="u_addordersubmit" (click) = "createUser(signUpFormGroup.value)">Create User</button>
+            <button mat-raised-button (click) = "openLogin()" class="ad_cancel">Cancel</button>
+          </mat-card-actions>
+    
+        </mat-card-content>
+        
+      </mat-card>
+    </form>
+</div>

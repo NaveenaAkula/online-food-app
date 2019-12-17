@@ -1,0 +1,45 @@
+
+
+<mat-toolbar class="us_toolbar">
+    <div class="welcome_title2">
+            Online Food App
+         </div>
+         <div class="welcome_title">
+                 Welcome {{fullName}}!!
+             </div>
+    <div class="us_buttonWrapper">
+        <button mat-raised-button color="primary" (click)="openHome()"  *ngIf="display != 'SuperUser'">Home</button>
+        <button mat-raised-button color="warn" id="a_logout" (click)="goBackLogin()">Logout</button>
+    </div>
+</mat-toolbar>
+
+<mat-grid-list cols="3" class="su_gridList" *ngIf="display == 'SuperUser'">
+    <mat-grid-tile>
+        <mat-card class="su_card" id="a_customer" (click)='openCustomer()'>
+        <mat-card-header class="imageHeader">
+            <mat-card-title>Customers</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="static/front-end/assets/images/customers (2).jpg" alt="Photo of a Customers Inu">
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="su_card" id="a_menu" (click)='openMenu()'>
+            <mat-card-header class="menu_imageHeader">
+                <mat-card-title>Menu</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="static/front-end/assets/images/Menu (2).jpg" alt="Photo of a Menu Inu">
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile class="order_gridtile">
+        <mat-card class="su_card su_card_order " id="a_order" (click)='openOrder()'>
+            <mat-card-header class="order_imageHeader">
+                <mat-card-title class="order_mat-card-title">Orders</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="static/front-end/assets/images/orders.jpg" alt="Photo of a orders Inu">
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<app-customer-details *ngIf="display == 'Customer'"></app-customer-details>
+<app-menu-details *ngIf="display == 'Menu'"></app-menu-details>
+<app-order-details *ngIf="display == 'Order'"></app-order-details>

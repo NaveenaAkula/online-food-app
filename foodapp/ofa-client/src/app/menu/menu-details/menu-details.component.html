@@ -1,0 +1,59 @@
+<div >
+  <div *ngIf="display == 'menuDetails'">
+      <mat-card class="cd_card common_table_card" *ngIf="menuDetails.data.length > 0">
+          <mat-card-header class="common_table_header">
+              <mat-card-title>Menu</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+              <span>
+                  <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                  </mat-form-field>
+                </span>
+      
+                <span>
+                  <button mat-raised-button color="primary" class="cd_addButton" id="a_menuadd" (click)="addMenu()">Add</button>
+                </span>
+            
+                <div>
+                    <table mat-table [dataSource]="menuDetails" class="cd_table"  matSort>
+              
+                        <!-- Name Column -->
+                        <ng-container matColumnDef="name">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                          <td mat-cell *matCellDef="let element"> {{element.menu_name}} </td>
+                        </ng-container>
+                      
+                        <!-- Type Column -->
+                        <ng-container matColumnDef="type">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                          <td mat-cell *matCellDef="let element"> {{element.menu_type}} </td>
+                        </ng-container>
+                      
+                        <!-- Price Column -->
+                        <ng-container matColumnDef="price">
+                          <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                          <td mat-cell *matCellDef="let element"> ${{element.unit_price}} </td>
+                        </ng-container>
+            
+                        <ng-container matColumnDef="actions">
+                          <th mat-header-cell  *matHeaderCellDef > Actions </th>
+                          <td mat-cell *matCellDef="let element" >
+                            <button mat-raised-button color="primary" (click)="editMenu(element)" class="cd_buttons">Edit</button>
+                            <button mat-raised-button color="warn" id="a_menudelete" (click)="deleteMenu(element)" class="cd_buttons">Delete</button>
+                          </td>
+                        </ng-container>
+                    
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                      </table>
+                
+                      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+          </mat-card-content>
+      </mat-card>
+  </div>
+  
+  <app-menu-edit *ngIf="display == 'menuEdit'" [menuDetails] = 'menu' (goBack)='open($event)'></app-menu-edit>
+  <app-menu-add *ngIf="display == 'menuAdd'" (goBack)='open($event)'></app-menu-add>
+</div>

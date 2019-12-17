@@ -1,0 +1,124 @@
+@media screen and (min-width: 768px){
+  .login-card {
+    min-width: 150px;
+    max-width: 500px;
+    padding-right: 31rem;
+    padding-left: 37rem;
+    padding-top: 14rem;
+    padding-bottom: 19rem;
+    width: 100%;
+  }
+
+  .signup_matcard  {
+    margin-top: -3rem !important;
+    margin-left: calc(100% + -67%) !important;
+    width: 30rem;
+  }
+
+  .sUp_formfield {
+    width: 100%;
+    padding-right: 25rem;
+  }
+
+  .signUp_buttons {
+    padding-left: 1rem;
+  }
+  
+  .login-full-width {
+    width: 100%;
+  }
+
+  .login_mat-card {
+    margin-top: 4rem !important;
+    margin-left: calc(100% + -67%) !important;
+
+  }
+
+  .signup {
+    background: rgb(88, 207, 49);
+    color: white;
+  }
+
+}
+
+                                            /* LAPTOP */
+  @media screen and (max-width: 770px){
+    .login-card {
+      min-width: 150px;
+      max-width: 500px;
+      padding-right: 31rem;
+      padding-left: 37rem;
+      padding-top: 14rem;
+      padding-bottom: 19rem;
+      width: 100%;
+    }
+    
+    .login-full-width {
+      width: 100%;
+    }
+  
+    .login_mat-card {
+      margin-top: 16rem !important;
+      margin-left: 9.5rem !important;
+      width: 28rem;
+  
+    }
+
+    .signup_matcard  {
+      margin-top: 10rem !important;
+      margin-left: 10.5rem !important;
+      width: 27rem;
+    }
+  
+    .signup {
+      background: rgb(88, 207, 49);
+      color: white;
+    }
+  
+    .sUp_formfield {
+      width: 100%;
+      padding-right: 25rem;
+    }
+  
+  }
+
+
+
+@media screen and (max-width:450px){
+  .login-card {
+    min-width: 150px;
+    max-width: 500px;
+    padding-right: 31rem;
+    padding-left: 37rem;
+    padding-top: 14rem;
+    padding-bottom: 19rem;
+    width: 100%;
+  }
+  
+  .login-full-width {
+    width: 100%;
+  }
+
+  .login_mat-card {
+    margin-top: 13rem !important;
+    margin-left: 0rem !important;
+
+  }
+
+  .signup_matcard{
+    margin-top: 6rem !important;
+    margin-left: 0.5rem !important;
+    width: 22rem;
+
+}
+
+  .signup {
+    background: rgb(88, 207, 49);
+    color: white;
+  }
+
+  .sUp_formfield {
+    width: 100%;
+    padding-right: 25rem;
+  }
+}

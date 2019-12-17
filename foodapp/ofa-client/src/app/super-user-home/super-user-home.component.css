@@ -1,0 +1,62 @@
+
+ .su_gridList {
+    width: 85rem !important;
+    margin-left: calc(100% + -86%) !important;
+    padding-top: 7rem;
+} 
+/* Laptop
+.su_gridList {
+    width: 85rem !important;
+    margin-left: calc(100% + -93%) !important;
+    padding-top: 7rem;
+} */
+
+.su_card {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.us_toolbar {
+    background: rgb(95, 158, 160);
+}
+
+.us_buttonWrapper {
+    margin-left: calc(100% + -99%);
+}
+
+.welcome_title2 {
+    color: white;
+}
+
+ 
+.welcome_title {
+    color: white;
+    margin-left: calc(100% + -30%);
+}
+ 
+/* Laptop */
+/* .welcome_title {
+    color: white;
+    margin-left: calc(100% + -38%);
+} */
+
+.su_card_order > img {
+    height: 19rem !important;
+}
+
+.order_imageHeader{
+    height: 2rem;
+}
+
+.order_mat-card-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0rem !important;
+    margin-top: -0.8rem !important;
+    margin-left: 10rem !important;
+}
+
+.order_gridtile {
+    padding-top: calc((31.3333% - 0.666667px) * 1 + 0px);
+
+}

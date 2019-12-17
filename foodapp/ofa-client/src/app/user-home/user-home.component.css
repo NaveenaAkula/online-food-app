@@ -1,0 +1,55 @@
+
+
+ .su_gridList {
+    width: 85rem !important;
+    margin-left: 18rem !important;
+    padding-top: 12rem;
+} 
+
+/* .su_gridList {
+    width: 85rem !important;
+    margin-left: 7rem !important;
+    padding-top: 7rem;
+} */
+
+.su_card {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 20rem !important
+}
+
+.us_toolbar {
+    background: rgb(95, 158, 160);
+}
+
+.us_buttonWrapper {
+    margin-left: calc(100% + -99%);
+}
+
+.welcome_title2 {
+    color: white;
+}
+
+
+.welcome_title {
+    color: white;
+    margin-left: calc(100% + -30%);
+} 
+
+/* Laptop */
+/* .welcome_title {
+    color: white;
+    margin-left: calc(100% + -38%);
+} */
+
+
+.u_home_imageHeader {
+    padding: 0.2rem !important;
+}
+
+.mat-grid-tile {
+    width: calc((29% - 0.666667px) * 1 + 0px) !important;
+    height: 3rem !important;
+    padding-top: calc(((28.3333% - 0.666667px) * 1) + 0px) !important;
+}

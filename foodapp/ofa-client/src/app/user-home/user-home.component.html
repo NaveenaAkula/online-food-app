@@ -1,0 +1,45 @@
+
+
+<mat-toolbar class="us_toolbar">
+    <div class="welcome_title2">
+       Online Food App
+    </div>
+    <div class="welcome_title">
+            Welcome {{fullName}}!!
+        </div>
+    <div class="us_buttonWrapper">
+        <button mat-raised-button color="primary" (click)="openHome()"  *ngIf="display != 'User'">Home</button>
+        <button mat-raised-button color="warn" id="u_logout" (click)="goBackLogin()" >Logout</button>
+    </div>
+</mat-toolbar>
+<mat-grid-list cols="3" class="su_gridList" *ngIf="display == 'User'">
+  <mat-grid-tile>
+        
+      <mat-card class="su_card" id="u_appetizer" (click)='openAppetizer()'>
+            <mat-card-header class="u_home_imageHeader">
+                    <mat-card-title>Appetizers</mat-card-title>
+                </mat-card-header>
+          <img mat-card-image src="static/front-end/assets/images/appetizers.jpg" alt="Photo of a Customers Inu">
+      </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-card class="su_card" id="u_maincourse" (click)='openMainCourse()'>
+            <mat-card-header class="u_home_imageHeader">
+                    <mat-card-title>Main Course</mat-card-title>
+                </mat-card-header>
+          <img mat-card-image src="static/front-end/assets/images/mainCourse.jpg" alt="Photo of a Menu Inu">
+      </mat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+      <mat-card class="su_card" id="u_desserts" (click)='openDeserts()'>
+            <mat-card-header class="u_home_imageHeader">
+                    <mat-card-title>Desserts</mat-card-title>
+                </mat-card-header>
+          <img mat-card-image src="static/front-end/assets/images/desserts.jpg" alt="Photo of a orders Inu">
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<app-menu-by-type *ngIf="display == 'Appetizer'" [type]='display' [customer]='customer' (goBackHome) = "openHome()"></app-menu-by-type>
+<app-menu-by-type *ngIf="display == 'MainCourse'" [type] = 'display' [customer]='customer'(goBackHome) = "openHome()"></app-menu-by-type>
+<app-menu-by-type *ngIf="display == 'Desserts'" [type] = 'display' [customer]='customer'(goBackHome) = "openHome()"></app-menu-by-type>

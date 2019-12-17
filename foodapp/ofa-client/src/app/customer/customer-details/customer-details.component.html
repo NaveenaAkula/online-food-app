@@ -1,0 +1,65 @@
+<div >
+    <div *ngIf="display == 'customerDetails'">
+        <mat-card class="cd_card common_table_card" *ngIf="customerDetails.data.length > 0">
+            <mat-card-header class="common_table_header">
+                <mat-card-title>Customer</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <span>
+                    <mat-form-field>
+                      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                    </mat-form-field>
+                  </span>
+      
+                  <span>
+                    <button mat-raised-button color="primary" class="cd_addButton" id="a_customeradd" (click)="addCustomer()">Add</button>
+                  </span>
+              
+                  <div>
+                      <table mat-table [dataSource]="customerDetails" class="cd_table"  matSort>
+                
+                          <!-- FristName Column -->
+                          <ng-container matColumnDef="first_name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+                          </ng-container>
+                        
+                          <!-- LastName Column -->
+                          <ng-container matColumnDef="last_name">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+                          </ng-container>
+                        
+                          <!-- Email Column -->
+                          <ng-container matColumnDef="email">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                          </ng-container>
+                      
+                          <!-- PhoneNumber Column -->
+                          <ng-container matColumnDef="phone_number">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+                            <td mat-cell *matCellDef="let element"> {{element.phone_number}} </td>
+                          </ng-container>
+              
+                          <ng-container matColumnDef="actions">
+                            <th mat-header-cell  *matHeaderCellDef > Actions </th>
+                            <td mat-cell *matCellDef="let element" >
+                              <button mat-raised-button color="primary" (click)="editCustomer(element)" class="cd_buttons">Edit</button>
+                              <button mat-raised-button color="warn" id="a_customerdelete" (click)="deleteCustomer(element)" class="cd_buttons">Delete</button>
+                            </td>
+                          </ng-container>
+                      
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                  
+                        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                  </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    
+    <app-customer-edit *ngIf="display == 'customerEdit'" [customer] = 'customer' (goBack)='open($event)'></app-customer-edit>
+    <app-customer-add *ngIf="display == 'customerAdd'" (goBack)='open($event)'></app-customer-add>
+</div>

@@ -1,0 +1,19 @@
+.cd_table {
+    width: 100% !important; 
+}
+
+.cd_card {
+    margin-left: 22rem;
+    margin-top: 2rem;
+    width: 50%;
+}
+
+.cd_buttons {
+    padding: 0rem;
+    margin-left: 1rem;
+}
+
+.cd_addButton {
+    margin-left: 37rem;
+    background-color: rgb(0, 128, 0);
+}
